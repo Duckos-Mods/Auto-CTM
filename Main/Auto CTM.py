@@ -48,8 +48,6 @@ def CreateChunkStuff(X,Z):
             YAxisArray.append(int(CreatedNoisei))
 
 
-
-
 for XSlide in range(LoopAmountOne):
     for ZSlide in range(LoopAmountTwo):
         X,Z = chunk_coords_to_block_coords(XSlide, ZSlide)
@@ -59,24 +57,9 @@ for XSlide in range(LoopAmountOne):
 YAxisArrayCreationTime = int(time.time() - Start)
 
 print("Created Y Axis Array!... It Took " + str(YAxisArrayCreationTime) + " Seconds")
-print("Generating Empty Chunks!...")
-Start = time.time()
-
-for ChunkScrollX in range(LoopAmountOne):
-    for ChunkScrollZ in range(LoopAmountTwo):
-        CreatedChunk = Chunk(ChunkScrollX, ChunkScrollZ)
-        level.put_chunk(CreatedChunk, "minecraft:overworld")
-
-CreatedChunk.changed = True
-level.save()
-EmptyingChunksTime = int(time.time() - Start)
-
-print("Generated Empty Chunks!... It Took " + str(EmptyingChunksTime) + " Seconds")
 print("Starting Main Generation loop!...")
 
-IndexOfYArray = 0
-NegIndexOfYArray = -1
-
+IndexOfYArray = 1
 Start = time.time()
 
 for MainSlideX in range(LoopAmountOne):
@@ -84,23 +67,15 @@ for MainSlideX in range(LoopAmountOne):
         CreatedNewChunk = Chunk(MainSlideX, MainSlideZ)
         for X in range(16):
             for Z in range(16):
-                if Z == 0:
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray + 1], Z] = GrassBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray + 1] - 1, Z] = DirtBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray + 1] - 2, Z] = DirtBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray + 1] - 3, Z] = StoneBlock
-                    level.put_chunk(CreatedNewChunk, "minecraft:overworld")
-                    IndexOfYArray += 1
-                else:
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray], Z] = GrassBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 1, Z] = DirtBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 2, Z] = DirtBlock
-                    CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 3, Z] = StoneBlock
-                    level.put_chunk(CreatedNewChunk, "minecraft:overworld")
-                    IndexOfYArray += 1
+                CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray], Z] = GrassBlock
+                CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 1, Z] = DirtBlock
+                CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 2, Z] = DirtBlock
+                CreatedNewChunk.blocks[X, YAxisArray[IndexOfYArray] - 3, Z] = StoneBlock
+                level.put_chunk(CreatedNewChunk, "minecraft:overworld")
+                IndexOfYArray += 1
 
 
 level.save()
 level.close()
-print("Finished Main Generation Loop!... It Took " + str(int(time.time() - Start))) + " Seconds!"
-print("In Total This Has Taken " + str(YAxisArrayCreationTime + EmptyingChunksTime + int(time.time() - Start)) + " Seconds")
+print("Finished Main Generation Loop!... It Took " + str(int(time.time() - Start)) + " Seconds!")
+print("In Total This Has Taken " + str(int(YAxisArrayCreationTime + int(time.time() - Start))) + " Seconds")
