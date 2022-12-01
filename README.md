@@ -19,13 +19,13 @@ python 3.7 MINIMUM recommended is python 3.10
 6. Once done load world
 
 # Issues
-1. ITS TAKING TO LONG  
+### 1. ITS TAKING TO LONG  
   If its taking to long for your liking change the scale 
-2. The terrarin has an issue on the 0 X of each chunk  
+### 2. The terrarin has an issue on the 0 X of each chunk  
   This is a known issue and i am trying to fix it (If you know python 3 feel free to help)
-3. ALL MY WORLD IS GONE  
+### 3. ALL MY WORLD IS GONE  
   This script replaces chunks in your world so make a new one or risk loosing your world
-4. My world wont load  
+### 4. My world wont load  
   Sometimes this script will error and break your world
   
 # Plans
