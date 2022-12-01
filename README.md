@@ -23,3 +23,6 @@ python 3.7 MINIMUM recommended is python 3.10
   This script replaces chunks in your world so make a new one or risk loosing your world
 4. My world wont load  
   Sometimes this script will error and break your world
+# Results
+YES THERE ARE ISSUES
+<img src="https://i.imgur.com/sRQdjbC.jpeg" width="910"/>
