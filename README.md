@@ -21,16 +21,14 @@ python 3.7 MINIMUM recommended is python 3.10
 # Issues
 ### 1. ITS TAKING TO LONG  
   If its taking to long for your liking change the scale 
-### 2. The terrarin has an issue on the 0 X of each chunk  
-  This is a known issue and i am trying to fix it (If you know python 3 feel free to help)
-### 3. ALL MY WORLD IS GONE  
+### 2. ALL MY WORLD IS GONE  
   This script replaces chunks in your world so make a new one or risk loosing your world
-### 4. My world wont load  
+### 3. My world wont load  
   Sometimes this script will error and break your world
   
 # Plans
-1. Some Sort Of 3d And 2d Noise Options
-2. Patch The 0 X Chunk Bug
+1. Some Sort Of 3d And 2d Noise Options  
+2. ~~Patch The 0 X Chunk Bug~~ FIXED
 3. Add A Feature Loader That Would Allow For Custom Structures To Spawn On The Terrain
 4. Add Decoration To The Terrain
 5. Add Cell Noise
@@ -41,5 +39,4 @@ python 3.7 MINIMUM recommended is python 3.10
 10. Offical Java Support (Shouldnt Be Hard)
 
 # Results
-YES THERE ARE ISSUES
-<img src="https://i.imgur.com/sRQdjbC.jpeg" width="910"/>
+<img src="https://i.imgur.com/eMz63GQ.jpeg" width="910"/>
